@@ -113,5 +113,25 @@ jQuery(document).ready(function($) {
   */
   loadGravatars();
 
+  $(window).load(function(){
+    $('.spinner').delay(2000).fadeOut(1000, function(){
+
+      $('#container, #footer').fadeIn(100);
+
+      if ($('body').hasClass('home')){
+        $('.bg_cat').addClass('bg_index').css('display','none !important').delay(100).slideToggle(1000); 
+      };
+
+      if ($('body').hasClass('category-sport')){
+        $('.bg_cat').addClass('bg_sport').css('display','none !important').delay(100).slideToggle(1000); 
+      };
+
+      if ($('body').hasClass('category-style')){
+        $('.bg_cat').addClass('bg_lifestyle').css('display','none !important').delay(100).slideToggle(1000); 
+      };
+
+    });
+
+  });
 
 }); /* end of as page load scripts */

@@ -1,8 +1,6 @@
 		<div id="push"></div>
 		</div>
-		<footer id="footer" class="footer" role="contentinfo">
-
-			<div id="inner-footer" class="wrap cf">
+		<footer id="footer" class="footer text-center hide" role="contentinfo">
 
 				<nav role="navigation">
 					<?php wp_nav_menu(array(
@@ -20,9 +18,7 @@
 					)); ?>
 				</nav>
 
-				<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
-
-			</div>
+				<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. <a href="http://www.mediatrends.cl">www.mediatrends.cl</a></p>
 
 		</footer>
 		<?php // all js scripts are loaded in library/bones.php ?>

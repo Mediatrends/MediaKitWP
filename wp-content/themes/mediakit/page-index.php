@@ -5,31 +5,64 @@
 ?>
 
 <?php get_header(); ?>
+	<div id="content" class="container_cat">
+		<?php 
+		
+		// the query
+		$the_query = new WP_Query('category_name=style,gaming,art,fashion,music,sneakers,entertainment,sport'); ?>
+		
+		<?php if ( $the_query->have_posts() ) : ?>
 
-	<?php 
-	// the query
-	$the_query = new WP_Query('category_name=style,gaming,art,fashion,music,sneakers,entertainment,sport'); ?>
+		  <!-- pagination here -->
+		<div class="cont_sites">
+		
+		  <!-- the loop -->
+		  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+			
+				<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf sites' ); ?> role="article">
+					
+					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+						<div class="site_info">
+						
+							<div class="cont_logo">
+								
+								<div class="cont-img">
 
-	<?php if ( $the_query->have_posts() ) : ?>
+									<img src="<?php the_field('logo_sitio'); ?>" alt="" />
+						
+								</div>
 
-	  <!-- pagination here -->
+							</div>
+							<div class="cont_des">
+								
+								<h3><?php the_title(); ?></h3>
 
-	  <!-- the loop -->
-	  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+								<?php global $more; $more = false; ?>
+									<?php the_excerpt(); ?>
+								<?php $more = true; ?>
 
-	    <h2><?php the_title(); ?></h2>
+								<div class="icon_link">
+									
+									<img src="<?php echo get_template_directory_uri(); ?>/img/link_kit.gif" alt="">
 
-	  <?php endwhile; ?>
-	  <!-- end of the loop -->
+								</div>
+							</div>
+						</div>
+					</a>
 
-	  <!-- pagination here -->
+			</article>
+			
+		  <?php endwhile; ?>
+		  <!-- end of the loop -->
+		</div>
+		  <!-- pagination here -->
 
-	  <?php wp_reset_postdata(); ?>
+		  <?php wp_reset_postdata(); ?>
 
-	<?php else:  ?>
-	  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-	<?php endif; ?>
-	
-	<div class="bg_cat bg_lifestyle"></div>
+		<?php else:  ?>
+		  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+		<?php endif; ?>
+	</div>	
+	<div class="bg_cat"></div>
 
 <?php get_footer(); ?>

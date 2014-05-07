@@ -52,15 +52,19 @@
 		    </script-->
 
 		<?php // end analytics ?>
-
 	</head>
 
 	<body <?php body_class(); ?>>
+		
+		<div class="spinner">
+		  <div class="dot1"></div>
+		  <div class="dot2"></div>
+		</div>
 
 		<!--depd-->
 		<?php include (TEMPLATEPATH . '/svgs.php'); ?>
 
-		<div id="container" class="container_cat">
+		<div id="container" class="hide">
 
 			<header class="header" role="banner">
 				<a href="<?php echo home_url(); ?>" rel="nofollow">
