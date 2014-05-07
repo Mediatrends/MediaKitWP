@@ -152,7 +152,7 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 	</head>
 
 	<body class="login <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
-	
+
 	<!--depd-->
 	<?php include (TEMPLATEPATH . '/svgs.php'); ?>
 
