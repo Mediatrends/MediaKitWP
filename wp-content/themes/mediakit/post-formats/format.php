@@ -95,6 +95,11 @@
 
                 <h3>zonas</h3>
 
+                <div class="box_zone">
+
+                    <?php echo implode('', get_field('zonas')); ?>
+                </div>
+                
                 <h3>sitio web</h3>
 
                 <iframe src="http://<?php the_field('url_sitio_web'); ?>" style="border:0px #FFFFFF none;" name="sitioweb" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" class="box_web"></iframe>
