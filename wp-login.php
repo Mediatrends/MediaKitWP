@@ -887,7 +887,7 @@ default:
 		<form name="loginform" id="loginform" action="<?php echo esc_url( site_url( 'wp-login.php', 'login_post' ) ); ?>" method="post">
 			
 			<div class="user_row">
-				<label for="user_login"><?php _e('Username') ?></label>
+				<label for="user_login">Usuario:<!--?php _e('Username') ?--></label>
 				<input type="text" name="log" id="user_login" class="input" value="<?php echo esc_attr($user_login); ?>" size="20" />
 			</div>
 
@@ -906,7 +906,7 @@ default:
 			?>
 			<!--p class="forgetmenot"><label for="rememberme"><input name="rememberme" type="checkbox" id="rememberme" value="forever" <?php checked( $rememberme ); ?> /> <?php esc_attr_e('Remember Me'); ?></label></p-->
 			<p class="submit">
-				<input type="submit" name="wp-submit" id="wp-submit" class="btn_enter button button-primary button-large" value="<?php esc_attr_e('Log In'); ?>" />
+				<input type="submit" name="wp-submit" id="wp-submit" class="btn_enter button button-primary button-large" value="entrar" /><!--<?php esc_attr_e('Log In'); ?>-->
 				
 				<?php	if ( $interim_login ) { ?>
 						<input type="hidden" name="interim-login" value="1" />
